@@ -1,5 +1,5 @@
 pip       >=              22.2.2
-streamlit        ==       1.18.0
+streamlit 
 sua >= 1.1.5.1
 darts          ==         0.25.0
 anyio           ==          4.0.0
