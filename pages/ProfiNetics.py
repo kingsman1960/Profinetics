@@ -22,7 +22,7 @@ TODAY = st.date_input('Today', value = pd.to_datetime('today', format='%Y-%m-%d'
 stocks = ('consumer', 'nasdaq_techtele','nyse_techtele', 'nasdaq_nyse_energy', 'nasdaq_nyse_financial', 'nasdaq_nyse_health', 'nasdaq_nyse_industrial', 'nasdaq_nyse_property', 'nasdaq_nyse_utility', 'nyse_consumer_discre')
 selected_stock = st.selectbox('Select dataset for prediction', stocks)
 
-ticker = pd.read_csv("./dataset/" + selected_stock + ".csv")['Symbol']
+ticker = pd.read_csv("./pages/dataset/" + selected_stock + ".csv")['Symbol']
 
 
 
