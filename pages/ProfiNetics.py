@@ -11,13 +11,15 @@ import base64
 import sua
 import matplotlib.pyplot as plt
 
+st.set_page_config(page_title= "ProfiNetics", page_icon = "💸")
+
 st.title('Portfolio Optimization App')
 
 
 START = st.date_input('Start', value = pd.to_datetime('2017-06-01', format='%Y-%m-%d'))
 TODAY = st.date_input('Today', value = pd.to_datetime('today', format='%Y-%m-%d'))
 
-stocks = ('nyse_consumer_staple', 'nasdaq_techundtelefromlar69', 'nasdaq_nyse_energy', 'nasdaq_nyse_financial', 'nasdaq_nyse_health', 'nasdaq_nyse_industrial', 'nasdaq_nyse_property', 'nasdaq_nyse_utility', 'nyse_consumer_discre')
+stocks = ('consumer', 'nasdaq_techtele','nyse_techtele', 'nasdaq_nyse_energy', 'nasdaq_nyse_financial', 'nasdaq_nyse_health', 'nasdaq_nyse_industrial', 'nasdaq_nyse_property', 'nasdaq_nyse_utility', 'nyse_consumer_discre')
 selected_stock = st.selectbox('Select dataset for prediction', stocks)
 
 ticker = pd.read_csv("./dataset/" + selected_stock + ".csv")['Symbol']
