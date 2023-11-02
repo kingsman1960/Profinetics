@@ -26,7 +26,7 @@ ticker = pd.read_csv("./pages/dataset/" + selected_stock + ".csv")['Symbol']
 
 
 
-@st.cache_data(experimental_allow_widgets=True)
+#@st.cache_data(experimental_allow_widgets=True)
 def load_data(ticker):
 	
 	yf.pdr_override()
