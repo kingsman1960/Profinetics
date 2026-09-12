@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>100</x>
+    <y>100</y>
+    <width>1600</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ProfiNetics - Advanced Portfolio Optimization</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QMainWindow { background-color: #1B1B1B; color: #FFFFFF; }
+    QLabel { color: #FFFFFF; font-size: 14px; }
+    QComboBox, QDateEdit, QLineEdit { 
+        background-color: #2A2A2A; 
+        color: #FFFFFF; 
+        border: 1px solid #3C3C3C;
+        padding: 6px;
+        font-size: 12px;
+    }
+    QPushButton { 
+        background-color: #FF8C00; 
+        color: #FFFFFF; 
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    QPushButton:hover { background-color: #FFA500; }
+    QTextEdit, QTableWidget { 
+        background-color: #1C1C1C; 
+        color: #FFFFFF;
+        border: 1px solid #3C3C3C;
+        font-size: 12px;
+    }
+    QHeaderView::section {
+        background-color: #2C2C2C;
+        color: #FFFFFF;
+        padding: 5px;
+        border: 1px solid #3C3C3C;
+    }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <!-- Sidebar Layout -->
+    <item>
+     <layout class="QVBoxLayout" name="sidebarLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="contentsMargins">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>0</width>
+        <height>20</height>
+       </rect>
+      </property>
+
+      <!-- Sidebar Buttons -->
+      <item>
+       <widget class="QPushButton" name="homeButton">
+        <property name="text">
+         <string>Home</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #2A2A2A; color: white; padding: 10px; text-align: left; font-size: 14px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="marketButton">
+        <property name="text">
+         <string>Market Overview</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #2A2A2A; color: white; padding: 10px; text-align: left; font-size: 14px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="historyButton">
+        <property name="text">
+         <string>Order History</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #2A2A2A; color: white; padding: 10px; text-align: left; font-size: 14px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="notificationsButton">
+        <property name="text">
+         <string>Notifications</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #2A2A2A; color: white; padding: 10px; text-align: left; font-size: 14px;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <!-- Main Content Layout -->
+    <item>
+     <layout class="QVBoxLayout" name="mainContentLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      
+      <!-- Header -->
+      <item>
+       <widget class="QLabel" name="headerLabel">
+        <property name="text">
+         <string>Portfolio Optimization</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF; font-size: 18px; font-weight: bold; margin-bottom: 10px;</string>
+        </property>
+       </widget>
+      </item>
+
+      <!-- Input Parameters Group -->
+      <item>
+       <widget class="QGroupBox" name="inputGroup">
+        <property name="title">
+         <string>Input Parameters</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF; font-size: 14px; font-weight: bold;</string>
+        </property>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Start Date:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QDateEdit" name="startDate"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>End Date:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QDateEdit" name="endDate"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Dataset:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="stockCombo"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Budget:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="budgetInput"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Optimizer:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="optimizerCombo"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Returns Model:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QComboBox" name="returnsCombo"/>
+         </item>
+         <item row="6" column="1">
+          <widget class="QPushButton" name="calculateButton">
+           <property name="text">
+            <string>Optimize Portfolio</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+
+      <!-- Data Table Widget -->
+      <item>
+       <widget class="QTableWidget" name="dataTable"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
